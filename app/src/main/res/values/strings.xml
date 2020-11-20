@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">lulu</string>
+    <string-array name="gender">
+        <item>性別</item>
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+
+    <string-array name="age">
+        <item>年齡</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+</resources>
