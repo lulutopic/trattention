@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">lulu</string>
+    <string name="app_name">trattention</string>
     <string-array name="gender">
         <item>性別</item>
         <item>男</item>
