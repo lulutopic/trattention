@@ -20,6 +20,7 @@ public class login extends AppCompatActivity {
 
         textview_Registration.setMovementMethod(LinkMovementMethod.getInstance());
 
+        
     }
 
 }
