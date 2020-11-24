@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.content.Intent;
+import android.widget.Button;
+
 
 
 public class registration extends AppCompatActivity {
@@ -20,6 +23,17 @@ public class registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         //設定隱藏標題
         getSupportActionBar().hide();
+
+        //設定註冊按鈕切換到登入頁面
+        Button btn_to_B = (Button) findViewById(R.id.registration);
+        btn_to_B.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(registration.this, login.class);
+                startActivity(intent);
+            }
+        });
 
 
         Spingender = (Spinner) findViewById(R.id.editTextTextPersonGender);

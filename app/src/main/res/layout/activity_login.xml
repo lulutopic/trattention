@@ -83,7 +83,7 @@
         android:layout_height="0dp"
         android:layout_weight="1">
         <Button
-            android:id="@+id/registration"
+            android:id="@+id/login"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="登入"
@@ -93,8 +93,5 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/button_shape_normal"/>
     </LinearLayout>
-
-
-
 
 </LinearLayout>
