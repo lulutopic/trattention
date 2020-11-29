@@ -1,9 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <FrameLayout
-        android:id="@+id/settings"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".personal"
+    android:background="@color/background">
+<!--導覽列-->
+    <LinearLayout
+        android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:background="@color/blue"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/imagehome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            app:srcCompat="@drawable/home"
+            android:layout_marginRight="20dp"
+            />
+        <ImageView
+            android:id="@+id/imagesafari"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/safari"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"/>
+
+    </LinearLayout>
+
+    <!--姓名-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:background="@color/background"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/nameview"
+            android:layout_width="425dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="200dp"
+
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+
+            android:background="@drawable/name"
+            android:textColor="@color/blue"
+
+            android:textStyle="bold"
+
+            android:textSize="40dp"
+
+            />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="300dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="10dp"
+
+            android:gravity="center"
+            android:background="@color/background"
+
+            android:text="李振維"
+            android:textColor="@color/gray"
+            android:textSize="40dp" />
+    </LinearLayout>
+    <!--帳號-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:background="@color/background"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/accountview"
+            android:layout_width="500dp"
+            android:layout_height="125dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+
+            android:background="@drawable/email"
+            android:textColor="@color/blue"
+
+            android:textSize="40dp"
+
+            />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="500dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:background="@color/background"
+
+            android:text="tty09183@gmail.com"
+            android:textColor="@color/gray"
+            android:textSize="40dp" />
+    </LinearLayout>
+    <!--密碼-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:background="@color/background"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/passwordview"
+            android:layout_width="500dp"
+            android:layout_height="125dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+
+            android:background="@drawable/password"
+            android:textColor="@color/blue"
+            android:textSize="40dp"
+
+            />
+
+        <TextView
+            android:id="@+id/password"
+            android:layout_width="500dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:background="@color/background"
+
+            android:text="李振維的密碼"
+            android:textColor="@color/gray"
+            android:textSize="40dp" />
+        <!--修改密碼-->
+        <TextView
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+
+            android:background="@color/background"
+            android:text="修改密碼"
+            android:textColor="@color/blue"
+            android:textSize="25dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:background="@color/background"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/musicview"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+
+            android:background="@drawable/bgm"
+            android:textColor="@color/blue"
+            android:text=""
+            android:textSize="40dp"
+            />
+
+        <TextView
+            android:id="@+id/selectmusic"
+            android:layout_width="500dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:background="@color/background"
+
+            android:text="name"
+            android:textColor="@color/gray"
+            android:textSize="40dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:background="@color/background"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/sure"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="確定"
+            android:textColor="@color/gray"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="560dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/blue"
+            />
+    </LinearLayout>
+
 </LinearLayout>
