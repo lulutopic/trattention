@@ -47,7 +47,8 @@
             android:gravity="center"
             android:textSize="30dp"
             android:layout_marginTop="100dp"
-            android:text="歡迎來到指南，有什麼能幫你解決的嗎？"/>
+            android:text="歡迎來到指南，有什麼能幫你解決的嗎？"
+            android:letterSpacing="0.4"/>
     </LinearLayout>
 
     <LinearLayout

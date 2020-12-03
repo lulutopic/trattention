@@ -48,7 +48,7 @@
             android:format="00:00:00"
             android:textSize="70sp"
             android:textColor="@color/blue"
-            >
+            android:letterSpacing="0.4">
         </Chronometer>
     </LinearLayout>
 

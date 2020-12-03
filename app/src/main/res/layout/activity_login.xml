@@ -89,11 +89,11 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="登入"
-            android:textColor="#676767"
+            android:textColor="#ffffff"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="560dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/button_shape_normal"
+            android:background="@drawable/button_shape_round"
             />
     </LinearLayout>
 
