@@ -95,6 +95,22 @@
             android:background="@drawable/spinner_back"
             />
     </LinearLayout>
+    //我覺得要設一個立即登入，前端幫我改！我模擬器顯示不出來
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="10">
+
+        <TextView
+            android:id="@+id/sign"
+            android:layout_width="337dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="560dp"
+            android:layout_marginTop="50dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="已有帳號立即登入" />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
