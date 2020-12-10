@@ -74,10 +74,10 @@ public class login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(login.this, "成功登入", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),FirstTest.class));
                         }else {
-                            Toast.makeText(login.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(login.this, "登入失敗 " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
                         }
 
@@ -120,7 +120,7 @@ public class login extends AppCompatActivity {
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(login.this, "Error ! Reset Link is Not Sent" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(login.this, "輸入錯誤，請重新輸入信箱" + e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
 
