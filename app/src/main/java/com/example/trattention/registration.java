@@ -36,7 +36,7 @@ public class registration extends AppCompatActivity {
         });
 
 
-        Spingender = (Spinner) findViewById(R.id.editTextTextPersonGender);
+        Spingender = (Spinner) findViewById(R.id.gender);
 
         ArrayAdapter<CharSequence> arrAdapSpn
                 = ArrayAdapter.createFromResource(registration.this, //對應的Context
@@ -47,7 +47,7 @@ public class registration extends AppCompatActivity {
         Spingender.setAdapter(arrAdapSpn); //將宣告好的 Adapter 設定給 Spinner
         Spingender.setOnItemSelectedListener(spnRegionOnItemSelected);
 
-        Spinage = (Spinner) findViewById(R.id.editTextTextPersonAge);
+        Spinage = (Spinner) findViewById(R.id.age);
 
         ArrayAdapter<CharSequence> arrAdapSpn1
                 = ArrayAdapter.createFromResource(registration.this, //對應的Context

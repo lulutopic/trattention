@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".login">
+    tools:context=".login"
+    android:background="@color/background">
 
 
     <LinearLayout
@@ -77,7 +78,8 @@
             android:layout_marginTop="50dp"
             android:layout_weight="1"
             android:ems="10"
-            android:text="@string/Registration" />
+            android:text="@string/Registration"
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -88,11 +90,12 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="登入"
-            android:textColor="#676767"
+            android:textColor="#ffffff"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="560dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/button_shape_normal"/>
+            android:background="@drawable/button_shape_round"
+            />
     </LinearLayout>
 
 </LinearLayout>

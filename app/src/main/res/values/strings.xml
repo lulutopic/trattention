@@ -21,8 +21,8 @@
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
-    <string name="ForgetPassword"><a href="http://www.Google.com">忘記密碼</a></string>
-    <string name="Registration"><a href="http://www.Google.com">註冊</a></string>
+    <string name="ForgetPassword">忘記密碼</string>
+    <string name="Registration">註冊</string>
     <string name="title_activity_personal_setting">PersonalSetting</string>
 
     <!-- Preference Titles -->
