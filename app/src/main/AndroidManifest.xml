@@ -20,6 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- 解決Unable to find explicit activity class 的問題-->
+        <activity
+            android:name="com.example.trattention.MainActivity">
+        </activity>
         <!-- 註冊頁面 -->
         <activity android:name=".registration">
             <intent-filter>
