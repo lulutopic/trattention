@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         //設定隱藏狀態
 
 
-        Spingender = (Spinner) findViewById(R.id.editTextTextPersonGender);
+        Spingender = (Spinner) findViewById(R.id.gender);
 
         ArrayAdapter<CharSequence> arrAdapSpn
                 = ArrayAdapter.createFromResource(MainActivity.this, //對應的Context
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Spingender.setAdapter(arrAdapSpn); //將宣告好的 Adapter 設定給 Spinner
         Spingender.setOnItemSelectedListener(spnRegionOnItemSelected);
 
-        Spinage = (Spinner) findViewById(R.id.editTextTextPersonAge);
+        Spinage = (Spinner) findViewById(R.id.age);
 
         ArrayAdapter<CharSequence> arrAdapSpn1
                 = ArrayAdapter.createFromResource(MainActivity.this, //對應的Context

@@ -18,7 +18,7 @@ public class login extends AppCompatActivity {
         getSupportActionBar().hide();
 
         //註冊的文字跳轉
-        TextView re = (TextView) findViewById(R.id.registration1);
+        TextView re = (TextView) findViewById(R.id.registration);
         re.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View fp) {
