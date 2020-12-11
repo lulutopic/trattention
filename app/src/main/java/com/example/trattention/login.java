@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -50,10 +49,6 @@ public class login extends AppCompatActivity {
         {
             @Override
             public void onClick(View mLoginBtn) {
-//                startActivity(new Intent(getApplicationContext(),MainActivity.class));
-//                Intent intent = new Intent();
-//                intent.setClass(login.this, FirstTest.class);
-//                startActivity(intent);
 
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
@@ -69,7 +64,7 @@ public class login extends AppCompatActivity {
                 }
 
                 // authenticate the user
-
+                //使用 google sign in api 登入
                 fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -86,9 +81,7 @@ public class login extends AppCompatActivity {
             }
         });
 
-        //忘記密碼跳轉
-        //forgotTextLink.setMovementMethod(LinkMovementMethod.getInstance());
-        //新曾帳號
+        //新增帳號，用於挑轉至 registration 頁面
         mCreateBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -96,7 +89,7 @@ public class login extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),registration.class));
             }
         });
-
+        //忘記密碼使用 google 的忘記密碼設定，會將 link 傳至使用者的 email 進行確認
         forgotTextLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,7 +100,8 @@ public class login extends AppCompatActivity {
                 passwordResetDialog.setMessage("請輸入 email 取得重設密碼信件");
                 passwordResetDialog.setView(resetMail);
 
-                passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                //頁面中送出 function
+                passwordResetDialog.setPositiveButton("送出", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // extract the email and send reset link
@@ -126,8 +120,8 @@ public class login extends AppCompatActivity {
 
                     }
                 });
-
-                passwordResetDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                //頁面中取消 function
+                passwordResetDialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // close the dialog
