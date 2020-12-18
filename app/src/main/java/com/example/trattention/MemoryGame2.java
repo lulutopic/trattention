@@ -1,31 +1,29 @@
 package com.example.trattention;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-
 import android.os.Handler;
-
 import android.os.SystemClock;
+import android.view.View;
 import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import android.view.View;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Arrays;
 import java.util.Collections;
 
 
-public class MemoryGame extends AppCompatActivity {
+public class MemoryGame2 extends AppCompatActivity {
     protected Long startTime;
     private Chronometer timer;
     private Handler handler = new Handler();
 
+
+    TextView tv_p1,tv_p2;
     ImageView iv_11,iv_12,iv_13,iv_14,
             iv_21,iv_22,iv_23,iv_24,
             iv_31,iv_32,iv_33,iv_34,
@@ -39,16 +37,19 @@ public class MemoryGame extends AppCompatActivity {
     int clickedFirst,clickedSecond;
     int cardNumber=1;
 
+    int turn=1;
+    int playerPoints=0,cpuPoints=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_memory_main);
+        setContentView(R.layout.activity_memory2_main);
 
         //設定隱藏標題
         getSupportActionBar().hide();
         timer = (Chronometer) findViewById(R.id.timer);
-        //取得目前時間
-        startTime = System.currentTimeMillis();
+        //接續前段時間
+        startTime= getIntent().getLongExtra("time",0);
         //設定定時要執行的方法
         handler.removeCallbacks(updateTimer);
         //設定Delay的時間
@@ -56,6 +57,8 @@ public class MemoryGame extends AppCompatActivity {
 
 
         //game
+        //tv_p1=(TextView) findViewById(R.id.tv_p1);
+        //tv_p2=(TextView) findViewById(R.id.tv_p2);
         iv_11=(ImageView)findViewById(R.id.iv_11);
         iv_12=(ImageView)findViewById(R.id.iv_12);
         iv_13=(ImageView)findViewById(R.id.iv_13);
@@ -89,8 +92,9 @@ public class MemoryGame extends AppCompatActivity {
         iv_42.setTag("13");
         iv_43.setTag("14");
         iv_44.setTag("15");
-        //
+        //load the card images
         frontOfCardsResources();
+
         Collections.shuffle(Arrays.asList(cardsArray));
 
         //Listener 等待使用者點擊此事件
@@ -98,8 +102,8 @@ public class MemoryGame extends AppCompatActivity {
         iv_11.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-              int theCard = Integer.parseInt((String)view.getTag());
-              doStuff(iv_11,theCard);
+                int theCard = Integer.parseInt((String)view.getTag());
+                doStuff(iv_11,theCard);
             }
         });
         iv_12.setOnClickListener(new View.OnClickListener(){
@@ -209,7 +213,7 @@ public class MemoryGame extends AppCompatActivity {
         });
     }
 
-    //set the connect image to the imageView
+    //set the conect image to the imageview
     private void doStuff(ImageView iv,int card){
         if (cardsArray[card]==101) {
             iv.setImageResource(image101);
@@ -292,6 +296,7 @@ public class MemoryGame extends AppCompatActivity {
 
 
     private void calculate(){
+
         if(firstCard==secondCard){
             if(clickedFirst==0){
                 iv_11.setVisibility(View.INVISIBLE);
@@ -418,13 +423,29 @@ public class MemoryGame extends AppCompatActivity {
                 iv_42.getVisibility() == View.INVISIBLE &&
                 iv_43.getVisibility() == View.INVISIBLE &&
                 iv_44.getVisibility() == View.INVISIBLE) {
-            //頁面跳轉
-            Intent intent = new Intent();
-            intent.setClass(MemoryGame.this, MemoryGame1.class);
-            intent.putExtra("time",startTime);
-            startActivity(intent);
-            finish();
 
+            //頁面跳轉
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MemoryGame2.this);
+            alertDialogBuilder
+                    .setMessage("恭喜!遊戲結束~")
+                    .setCancelable(false)
+                    .setPositiveButton("NEW",new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface,int i){
+                            Intent intent = new Intent();
+                            intent.setClass(MemoryGame2.this,login.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    })
+                    .setNegativeButton("離開",new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialogInterface,int i){
+                            finish();
+                        }
+                    });
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+                    alertDialog.show();
         }
     }
 
@@ -448,6 +469,8 @@ public class MemoryGame extends AppCompatActivity {
     }
 
 
+
+
     //固定要執行的方法
     protected Runnable updateTimer = new Runnable() {
         public void run() {
@@ -464,6 +487,7 @@ public class MemoryGame extends AppCompatActivity {
             handler.postDelayed(this, 1000);
         }
     };
+
 
 
     public void btnClick(View view) {
