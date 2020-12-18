@@ -1,7 +1,10 @@
 package com.example.trattention;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -22,6 +25,8 @@ public class MemoryGame extends AppCompatActivity {
     private Long startTime;
     private Chronometer timer;
     private Handler handler = new Handler();
+
+
     TextView tv_p1,tv_p2;
     ImageView iv_11,iv_12,iv_13,iv_14,
             iv_21,iv_22,iv_23,iv_24,
@@ -53,6 +58,8 @@ public class MemoryGame extends AppCompatActivity {
         handler.removeCallbacks(updateTimer);
         //設定Delay的時間
         handler.postDelayed(updateTimer, 10);
+
+
         //game
         //tv_p1=(TextView) findViewById(R.id.tv_p1);
         //tv_p2=(TextView) findViewById(R.id.tv_p2);
@@ -94,7 +101,8 @@ public class MemoryGame extends AppCompatActivity {
 
         Collections.shuffle(Arrays.asList(cardsArray));
 
-        //tv.p2.setTextColor(Color.GRAY);
+        //Listener 等待使用者點擊此事件
+        //override 覆蓋掉原本android studio 上層物件
         iv_11.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -209,7 +217,7 @@ public class MemoryGame extends AppCompatActivity {
         });
     }
 
-    //set the cooect image to the imageview
+    //set the conect image to the imageview
     private void doStuff(ImageView iv,int card){
         if (cardsArray[card]==101) {
             iv.setImageResource(image101);
@@ -362,9 +370,6 @@ public class MemoryGame extends AppCompatActivity {
             }else if(clickedSecond==15){
                 iv_44.setVisibility(View.INVISIBLE);
             }
-
-
-
         }else{
             iv_11.setImageResource(R.drawable.memoryback);
             iv_12.setImageResource(R.drawable.memoryback);
@@ -402,7 +407,47 @@ public class MemoryGame extends AppCompatActivity {
         iv_43.setEnabled(true);
         iv_44.setEnabled(true);
 
-
+        //檢查遊戲結束
+        checkEnd();
+    }
+    private void checkEnd(){
+        if(iv_11.getVisibility()==View.INVISIBLE &&
+                iv_12.getVisibility()==View.INVISIBLE &&
+                iv_13.getVisibility()==View.INVISIBLE &&
+                iv_14.getVisibility()==View.INVISIBLE &&
+                iv_21.getVisibility()==View.INVISIBLE &&
+                iv_22.getVisibility()==View.INVISIBLE &&
+                iv_23.getVisibility()==View.INVISIBLE &&
+                iv_24.getVisibility()==View.INVISIBLE &&
+                iv_31.getVisibility()==View.INVISIBLE &&
+                iv_32.getVisibility()==View.INVISIBLE &&
+                iv_33.getVisibility()==View.INVISIBLE &&
+                iv_34.getVisibility()==View.INVISIBLE &&
+                iv_41.getVisibility()==View.INVISIBLE &&
+                iv_42.getVisibility()==View.INVISIBLE &&
+                iv_43.getVisibility()==View.INVISIBLE &&
+                iv_44.getVisibility()==View.INVISIBLE ){
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MemoryGame.this);
+            alertDialogBuilder
+                    .setMessage("恭喜!遊戲結束~")
+                    .setCancelable(false)
+                    .setPositiveButton("NEW",new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface,int i){
+                            Intent intent = new Intent(getApplicationContext(),MemoryGame.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    })
+                    .setNegativeButton("離開",new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialogInterface,int i){
+                            finish();
+                        }
+                    });
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+                    alertDialog.show();
+        }
     }
 
     private void frontOfCardsResources(){
