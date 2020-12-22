@@ -429,11 +429,11 @@ public class MemoryGame2 extends AppCompatActivity {
             alertDialogBuilder
                     .setMessage("恭喜!遊戲結束~")
                     .setCancelable(false)
-                    .setPositiveButton("NEW",new DialogInterface.OnClickListener() {
+                    .setPositiveButton("查看結果",new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface,int i){
                             Intent intent = new Intent();
-                            intent.setClass(MemoryGame2.this,login.class);
+                            intent.setClass(MemoryGame2.this,gameresult.class);
                             startActivity(intent);
                             finish();
                         }
@@ -441,6 +441,9 @@ public class MemoryGame2 extends AppCompatActivity {
                     .setNegativeButton("離開",new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface dialogInterface,int i){
+                            Intent intent = new Intent();
+                            intent.setClass(MemoryGame2.this,gameselect.class);
+                            startActivity(intent);
                             finish();
                         }
                     });
