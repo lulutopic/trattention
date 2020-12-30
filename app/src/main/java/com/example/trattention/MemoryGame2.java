@@ -22,8 +22,6 @@ public class MemoryGame2 extends AppCompatActivity {
     private Chronometer timer;
     private Handler handler = new Handler();
 
-
-    TextView tv_p1,tv_p2;
     ImageView iv_11,iv_12,iv_13,iv_14,
             iv_21,iv_22,iv_23,iv_24,
             iv_31,iv_32,iv_33,iv_34,
@@ -37,8 +35,6 @@ public class MemoryGame2 extends AppCompatActivity {
     int clickedFirst,clickedSecond;
     int cardNumber=1;
 
-    int turn=1;
-    int playerPoints=0,cpuPoints=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -290,7 +286,7 @@ public class MemoryGame2 extends AppCompatActivity {
                     //check if the selected images are equal
                     calculate();
                 }
-            },1000);
+            },500);
         }
     }
 

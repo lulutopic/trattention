@@ -339,7 +339,7 @@ public class MemoryGame1 extends AppCompatActivity {
                     //check if the selected images are equal
                     calculate();
                 }
-            },1000);
+            },500);
         }
     }
 
