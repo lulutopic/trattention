@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="舒爾特方格"
+            android:text="遊戲結果"
             android:textColor="#30449F"
             android:textSize="50dp"
             android:typeface="monospace"
