@@ -22,7 +22,7 @@ import java.util.Collections;
 
 
 
-public class SchulteGrid extends AppCompatActivity {
+public class SchulteGrid1 extends AppCompatActivity {
     private Long startTime;
     private Chronometer timer;
     private Handler handler = new Handler();
@@ -41,9 +41,8 @@ public class SchulteGrid extends AppCompatActivity {
         setContentView(R.layout.activity_schulte_grid);
         //設定隱藏標題
         getSupportActionBar().hide();
-        timer = (Chronometer) findViewById(R.id.timer);
-        //取得目前時間
-        startTime = System.currentTimeMillis();
+        //接續前段時間
+        startTime= getIntent().getLongExtra("time",0);
         //設定定時要執行的方法
         handler.removeCallbacks(updateTimer);
         //設定Delay的時間
@@ -223,7 +222,7 @@ public class SchulteGrid extends AppCompatActivity {
         if (count == 17) {
             //頁面跳轉
             Intent intent = new Intent();
-            intent.setClass(SchulteGrid.this, SchulteGrid1.class);
+            intent.setClass(SchulteGrid1.this, SchulteGrid2.class);
             intent.putExtra("time",startTime);
             startActivity(intent);
             finish();

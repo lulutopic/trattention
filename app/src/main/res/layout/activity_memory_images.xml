@@ -67,16 +67,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginRight="20dp"
         android:layout_marginLeft="0dp"
-        >
-            <LinearLayout
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
             android:layout_width="700dp"
-            android:layout_height="500dp"
-            android:layout_gravity="center"
+            android:layout_height="550dp"
+            android:layout_gravity="top"
             android:background="#ffffff"
             android:elevation="5dp"
             android:orientation="vertical">
@@ -84,52 +83,48 @@
             <LinearLayout
                 android:layout_width="700dp"
                 android:layout_height="0dp"
-                android:layout_gravity="right|center_vertical"
+                android:layout_gravity="center"
                 android:layout_weight="1">
 
                 <ImageView
                     android:id="@+id/iv_11"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
 
                 <ImageView
                     android:id="@+id/iv_12"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
 
                 <ImageView
                     android:id="@+id/iv_13"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
 
                 <ImageView
                     android:id="@+id/iv_14"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
             </LinearLayout>
 
             <LinearLayout
@@ -143,48 +138,44 @@
                     android:id="@+id/iv_21"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
 
 
                 <ImageView
                     android:id="@+id/iv_22"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
 
 
                 <ImageView
                     android:id="@+id/iv_23"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
 
 
                 <ImageView
                     android:id="@+id/iv_24"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
             </LinearLayout>
 
             <LinearLayout
@@ -197,45 +188,41 @@
                     android:id="@+id/iv_31"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
 
                 <ImageView
                     android:id="@+id/iv_32"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
 
                 <ImageView
                     android:id="@+id/iv_33"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
 
                 <ImageView
                     android:id="@+id/iv_34"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
             </LinearLayout>
 
             <LinearLayout
@@ -248,46 +235,42 @@
                     android:id="@+id/iv_41"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
 
                 <ImageView
                     android:id="@+id/iv_42"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
 
                 <ImageView
                     android:id="@+id/iv_43"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
 
                 <ImageView
                     android:id="@+id/iv_44"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/memoryback"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="20dp"
-                    />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/memoryback" />
             </LinearLayout>
-    </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

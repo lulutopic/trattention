@@ -22,7 +22,7 @@ import java.util.Collections;
 
 
 
-public class SchulteGrid extends AppCompatActivity {
+public class SchulteGrid2 extends AppCompatActivity {
     private Long startTime;
     private Chronometer timer;
     private Handler handler = new Handler();
@@ -42,8 +42,8 @@ public class SchulteGrid extends AppCompatActivity {
         //設定隱藏標題
         getSupportActionBar().hide();
         timer = (Chronometer) findViewById(R.id.timer);
-        //取得目前時間
-        startTime = System.currentTimeMillis();
+        //接續前段時間
+        startTime= getIntent().getLongExtra("time",0);
         //設定定時要執行的方法
         handler.removeCallbacks(updateTimer);
         //設定Delay的時間
@@ -222,11 +222,30 @@ public class SchulteGrid extends AppCompatActivity {
     private void checkEnd() {
         if (count == 17) {
             //頁面跳轉
-            Intent intent = new Intent();
-            intent.setClass(SchulteGrid.this, SchulteGrid1.class);
-            intent.putExtra("time",startTime);
-            startActivity(intent);
-            finish();
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SchulteGrid2.this);
+            alertDialogBuilder
+                    .setMessage("恭喜!遊戲結束~")
+                    .setCancelable(false)
+                    .setPositiveButton("查看結果",new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface,int i){
+                            Intent intent = new Intent();
+                            intent.setClass(SchulteGrid2.this,gameresult.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    })
+                    .setNegativeButton("離開",new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialogInterface,int i){
+                            Intent intent = new Intent();
+                            intent.setClass(SchulteGrid2.this,gameselect.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
 
         }
     }
