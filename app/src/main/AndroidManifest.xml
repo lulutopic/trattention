@@ -21,6 +21,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- 指南選擇專區 -->
+        <activity android:name=".instruction">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".SchulteGrid2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,56 +38,78 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-         <!-- 舒爾特方格 -->
+
+        <!-- 歡迎 -->
+        <activity android:name=".hello">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+         <!-- 舒爾特方格1 -->
         <activity android:name=".SchulteGrid1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 首頁 -->
+        </activity>
+        <!-- 首頁 -->
         <activity android:name=".home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 記憶力遊戲 -->
+        </activity>
+        <!-- 記憶力遊戲 -->
         <activity android:name=".MemoryGame">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 登入頁面 -->
+        </activity>
+        <!-- 登入頁面 -->
         <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 記憶力遊戲 -->
+        </activity>
+        <!-- 記憶力遊戲2 -->
+        <activity android:name=".MemoryGame2">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <!-- 記憶力遊戲1 -->
         <activity android:name=".MemoryGame1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 記憶力遊戲 -->
-        <activity android:name=".MemoryGame2">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        </activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity> <!-- 後測 -->
+
+
+        <!-- 後測 -->
         <activity android:name=".lastTest">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 解決Unable to find explicit activity class 的問題 -->
+        </activity>
+        <!-- 解決Unable to find explicit activity class 的問題 -->
         <!-- 註冊頁面 -->
         <activity android:name=".registration">
             <intent-filter>
@@ -85,49 +117,53 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 測驗說明 -->
+        </activity>
+        <!-- 測驗說明 -->
         <activity android:name=".TestDirection">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 初始測驗 -->
+        </activity>
+        <!-- 初始測驗 -->
         <activity android:name=".FirstTest">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 遊戲結果 -->
+        </activity>
+        <!-- 遊戲結果 -->
         <activity android:name=".gameresult">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 指南選擇專區 -->
-        <activity android:name=".instruction">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        </activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity> <!-- 遊戲選擇頁面 -->
+         <!-- 遊戲選擇頁面 -->
         <activity android:name=".gameselect">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 前導片 -->
+        </activity>
+
+
+
+
+        <!-- 前導片 -->
         <activity android:name=".video">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 個人化設置 -->
+        </activity>
+        <!-- 個人化設置 -->
         <activity
             android:name=".personal"
             android:label="@string/title_activity_personal_setting">
