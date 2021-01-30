@@ -24,10 +24,10 @@
             android:layout_marginRight="20dp"
             />
         <ImageView
-            android:id="@+id/imagesafari"
+            android:id="@+id/imageatips"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/safari"
+            app:srcCompat="@drawable/tips"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="20dp"/>
 

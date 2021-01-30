@@ -45,7 +45,7 @@ public class MemoryGame extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_memory_main);
+        setContentView(R.layout.activity_memory_images);
 
         //設定隱藏標題
         getSupportActionBar().hide();
