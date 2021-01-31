@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,17 @@ public class personal extends AppCompatActivity {
         setContentView(R.layout.activity_personal);
         //設定隱藏標題
         getSupportActionBar().hide();
+        //頁面跳轉  點選確定->回到主頁面
+        Button button1 = findViewById(R.id.sure);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent();
+                intent.setClass(personal.this, home.class);
+                startActivity(intent);
+            }
+        });
+
         //switch開關
         aSwitch=(Switch)findViewById(R.id.switch1);
         aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

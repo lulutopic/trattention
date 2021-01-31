@@ -13,6 +13,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Trattention">
+        <!-- 登入頁面 -->
+        <activity android:name=".login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 歡迎 -->
+        <activity android:name=".hello">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 首頁 -->
+        <activity android:name=".home">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 記憶力遊戲 -->
+        <activity android:name=".MemoryGame">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!-- 舒爾特方格 -->
         <activity android:name=".SchulteGrid">
             <intent-filter>
@@ -39,15 +72,7 @@
             </intent-filter>
         </activity>
 
-        <!-- 歡迎 -->
-        <activity android:name=".hello">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
          <!-- 舒爾特方格1 -->
         <activity android:name=".SchulteGrid1">
@@ -57,30 +82,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- 首頁 -->
-        <activity android:name=".home">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <!-- 記憶力遊戲 -->
-        <activity android:name=".MemoryGame">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <!-- 登入頁面 -->
-        <activity android:name=".login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <!-- 記憶力遊戲2 -->
         <activity android:name=".MemoryGame2">
 
