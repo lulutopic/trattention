@@ -73,7 +73,35 @@
         android:layout_marginRight="20dp"
         android:layout_marginLeft="0dp"
         >
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="500dp"
+            android:layout_gravity="center"
+            android:background="#ffffff"
+            android:elevation="5dp"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="center"
+                android:text="我想要"
+                android:textColor="@color/blue"
+                android:textSize="40dp">
+
+            </TextView>
+
+            <ImageView
+                android:id="@+id/iv_100"
+                android:layout_gravity="center"
+                android:layout_width="100dp"
+                android:scaleType="center"
+                android:layout_height="100dp"
+                android:src="@drawable/memoryback" />
+
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="700dp"
             android:layout_height="500dp"
             android:layout_gravity="center"

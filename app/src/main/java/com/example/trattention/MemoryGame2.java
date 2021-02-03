@@ -25,16 +25,21 @@ public class MemoryGame2 extends AppCompatActivity {
     ImageView iv_11,iv_12,iv_13,iv_14,
             iv_21,iv_22,iv_23,iv_24,
             iv_31,iv_32,iv_33,iv_34,
-            iv_41,iv_42,iv_43,iv_44;
+            iv_41,iv_42,iv_43,iv_44,
+            iv_100;
+
     //array for the images
-    Integer[] cardsArray = {101,102,103,104,105,106,107,108,201,202,203,204,205,206,207,208};
+    Integer[] cardsArray = {102,102,102,102,102,102,107,107,107,107,107,106,106,106,106,106};
+    //問題的陣列
+    Integer[] questionArray = {5,5,5,4,4,4,1,1};
+
     //actual images
-    int image101,image102,image103,image104,image105,image106,image107,image108,
-            image201,image202,image203,image204,image205,image206,image207,image208;
+    int questionCard;//題目
+    int image102,image107,image106,image101,image103,image105;
     int firstCard,secondCard;
     int clickedFirst,clickedSecond;
     int cardNumber=1;
-
+    int questionCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +55,16 @@ public class MemoryGame2 extends AppCompatActivity {
         handler.removeCallbacks(updateTimer);
         //設定Delay的時間
         handler.postDelayed(updateTimer, 10);
+        //題目洗牌
+        Collections.shuffle(Arrays.asList(questionArray));
+        questionArray=Arrays.copyOf(questionArray,9);
+        questionArray[8] =0;
+        //設定第一題
+        questionCard = questionArray[questionCount];
 
 
         //game
-        //tv_p1=(TextView) findViewById(R.id.tv_p1);
-        //tv_p2=(TextView) findViewById(R.id.tv_p2);
+        iv_100=(ImageView)findViewById(R.id.iv_100);
         iv_11=(ImageView)findViewById(R.id.iv_11);
         iv_12=(ImageView)findViewById(R.id.iv_12);
         iv_13=(ImageView)findViewById(R.id.iv_13);
@@ -90,6 +100,14 @@ public class MemoryGame2 extends AppCompatActivity {
         iv_44.setTag("15");
         //load the card images
         frontOfCardsResources();
+        //第一題的顏色
+        if(questionCard==5){
+            iv_100.setImageResource(image101);
+        }else if(questionCard==4){
+            iv_100.setImageResource(image105);
+        }else if(questionCard==1) {
+            iv_100.setImageResource(image103);
+        }
 
         Collections.shuffle(Arrays.asList(cardsArray));
 
@@ -211,54 +229,22 @@ public class MemoryGame2 extends AppCompatActivity {
 
     //set the conect image to the imageview
     private void doStuff(ImageView iv,int card){
-        if (cardsArray[card]==101) {
-            iv.setImageResource(image101);
-        }else if(cardsArray[card]==102){
+        if(cardsArray[card]==102){
             iv.setImageResource(image102);
-        }else if(cardsArray[card]==103){
-            iv.setImageResource(image103);
-        }else if(cardsArray[card]==104){
-            iv.setImageResource(image104);
-        }else if(cardsArray[card]==105){
-            iv.setImageResource(image105);
-        }else if(cardsArray[card]==106){
-            iv.setImageResource(image106);
         }else if(cardsArray[card]==107){
             iv.setImageResource(image107);
-        }else if(cardsArray[card]==108){
-            iv.setImageResource(image108);
-        }else if(cardsArray[card]==201){
-            iv.setImageResource(image201);
-        }else if(cardsArray[card]==202){
-            iv.setImageResource(image202);
-        }else if(cardsArray[card]==203){
-            iv.setImageResource(image203);
-        }else if(cardsArray[card]==204){
-            iv.setImageResource(image204);
-        }else if(cardsArray[card]==205){
-            iv.setImageResource(image205);
-        }else if(cardsArray[card]==206){
-            iv.setImageResource(image206);
-        }else if(cardsArray[card]==207){
-            iv.setImageResource(image207);
-        }else if(cardsArray[card]==208){
-            iv.setImageResource(image208);
+        }else if(cardsArray[card]==106) {
+            iv.setImageResource(image106);
         }
 
         //check which image is selected and save
         if(cardNumber==1){
             firstCard=cardsArray[card];
-            if(firstCard>200){
-                firstCard=firstCard-100;
-            }
             cardNumber=2;
             clickedFirst=card;
             iv.setEnabled(false);
         }else if(cardNumber==2){
             secondCard=cardsArray[card];
-            if(secondCard>200){
-                secondCard=secondCard-100;
-            }
             cardNumber=1;
             clickedSecond=card;
 
@@ -290,10 +276,21 @@ public class MemoryGame2 extends AppCompatActivity {
         }
     }
 
-
+//是否要消掉
     private void calculate(){
 
-        if(firstCard==secondCard){
+        if(questionCard==Math.abs(firstCard-secondCard)) {
+            //讓題目變下一題
+            questionCard = questionArray[++questionCount];
+            if (questionCard == 5) {
+                iv_100.setImageResource(image101);
+            } else if (questionCard == 4) {
+                iv_100.setImageResource(image105);
+            } else if (questionCard == 1) {
+                iv_100.setImageResource(image103);
+            }
+
+
             if(clickedFirst==0){
                 iv_11.setVisibility(View.INVISIBLE);
             }else if(clickedFirst==1){
@@ -449,22 +446,14 @@ public class MemoryGame2 extends AppCompatActivity {
     }
 
     private void frontOfCardsResources(){
-        image101=R.drawable.memory101;
-        image102=R.drawable.memory102;
         image103=R.drawable.memory103;
-        image104=R.drawable.memory104;
+        image101=R.drawable.memory101;
         image105=R.drawable.memory105;
-        image106=R.drawable.memory106;
+
+        image102=R.drawable.memory102;
         image107=R.drawable.memory107;
-        image108=R.drawable.memory108;
-        image201=R.drawable.memory201;
-        image202=R.drawable.memory202;
-        image203=R.drawable.memory203;
-        image204=R.drawable.memory204;
-        image205=R.drawable.memory205;
-        image206=R.drawable.memory206;
-        image207=R.drawable.memory207;
-        image208=R.drawable.memory208;
+        image106=R.drawable.memory106;
+
     }
 
 

@@ -72,10 +72,10 @@
                     android:layout_width="550dp"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
-                    android:gravity="center"
                     android:background="@drawable/translucent"
-                    android:textColor="@color/darkgray"
+                    android:gravity="center"
                     android:text="李振維"
+                    android:textColor="@color/darkgray"
                     android:textSize="40dp" />
             </LinearLayout>
 
