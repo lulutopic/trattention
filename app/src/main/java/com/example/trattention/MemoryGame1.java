@@ -356,7 +356,7 @@ public class MemoryGame1 extends AppCompatActivity {
             }else if(clickedFirst==3){
                 iv_14.setVisibility(View.INVISIBLE);
             }else if(clickedFirst==4){
-                    iv_15.setVisibility(View.INVISIBLE);
+                iv_15.setVisibility(View.INVISIBLE);
             }else if(clickedFirst==5){
                 iv_21.setVisibility(View.INVISIBLE);
             }else if(clickedFirst==6){
