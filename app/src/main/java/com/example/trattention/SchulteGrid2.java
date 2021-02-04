@@ -17,7 +17,10 @@ import android.widget.TextView;
 
 import android.view.View;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Collections;
 
 
@@ -27,13 +30,24 @@ public class SchulteGrid2 extends AppCompatActivity {
     private Chronometer timer;
     private Handler handler = new Handler();
 
+
+
     //圖片的id設定的變數
     ImageView one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve,thirteen,fourteen,fifteen,sixteen;
 
-    //array for the images
-    Integer[] NumArray = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
 
-    int count = 1;
+    int[] ImageArray = {R.drawable.one,R.drawable.two,R.drawable.three,R.drawable.four,R.drawable.five,R.drawable.six,R.drawable.seven
+            ,R.drawable.eight,R.drawable.nine,R.drawable.ten,R.drawable.eleven,R.drawable.twelve,R.drawable.thirteen,R.drawable.fourteen
+            ,R.drawable.fifteen,R.drawable.sixteen};
+
+
+
+
+    //array for the images
+
+
+
+    int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +56,12 @@ public class SchulteGrid2 extends AppCompatActivity {
         //設定隱藏標題
         getSupportActionBar().hide();
         timer = (Chronometer) findViewById(R.id.timer);
-        //接續前段時間
-        startTime= getIntent().getLongExtra("time",0);
+        //取得目前時間
+        startTime = System.currentTimeMillis();
         //設定定時要執行的方法
         handler.removeCallbacks(updateTimer);
         //設定Delay的時間
         handler.postDelayed(updateTimer, 10);
-
 
         //game
         one=(ImageView)findViewById(R.id.one);
@@ -68,24 +81,20 @@ public class SchulteGrid2 extends AppCompatActivity {
         fifteen=(ImageView)findViewById(R.id.fifteen);
         sixteen=(ImageView)findViewById(R.id.sixteen);
 
-        one.setTag("1");
-        two.setTag("2");
-        three.setTag("3");
-        four.setTag("4");
-        five.setTag("5");
-        six.setTag("6");
-        seven.setTag("7");
-        eight.setTag("8");
-        nine.setTag("9");
-        ten.setTag("10");
-        eleven.setTag("11");
-        twelve.setTag("12");
-        thirteen.setTag("13");
-        fourteen.setTag("14");
-        fifteen.setTag("15");
-        sixteen.setTag("16");
+
+
+        ImageView[] NumArray = {one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve,thirteen,fourteen,fifteen,sixteen};
+
 
         Collections.shuffle(Arrays.asList(NumArray));
+
+        for(int i = 0; i < ImageArray.length; i++){
+            NumArray[i].setImageResource(ImageArray[i]);
+            String s = String.valueOf(i);
+            NumArray[i].setTag(s);
+        }
+
+
 
         //Listener 等待使用者點擊此事件
         //override 覆蓋掉原本android studio 上層物件
@@ -220,7 +229,7 @@ public class SchulteGrid2 extends AppCompatActivity {
     }
 
     private void checkEnd() {
-        if (count == 17) {
+        if (count == 16) {
             //頁面跳轉
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SchulteGrid2.this);
             alertDialogBuilder
@@ -249,6 +258,7 @@ public class SchulteGrid2 extends AppCompatActivity {
 
         }
     }
+
 
 
     //固定要執行的方法

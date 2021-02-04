@@ -72,7 +72,6 @@
                     android:id="@+id/sixteen"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/sixteen"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
@@ -80,7 +79,6 @@
                     android:id="@+id/two"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/two"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
@@ -88,7 +86,6 @@
                     android:id="@+id/ten"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ten"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
@@ -96,7 +93,6 @@
                     android:id="@+id/fifteen"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/fifteen"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
@@ -109,7 +105,6 @@
                     android:id="@+id/one"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/one"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
@@ -117,7 +112,6 @@
                     android:id="@+id/four"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/four"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
@@ -125,7 +119,6 @@
                     android:id="@+id/seven"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/seven"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
@@ -133,7 +126,6 @@
                     android:id="@+id/fourteen"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/fourteen"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
@@ -146,7 +138,6 @@
                     android:id="@+id/thirteen"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/thirteen"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
@@ -154,7 +145,6 @@
                     android:id="@+id/six"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/six"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
@@ -162,7 +152,6 @@
                     android:id="@+id/eleven"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/eleven"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
@@ -170,7 +159,6 @@
                     android:id="@+id/three"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/three"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
@@ -183,7 +171,6 @@
                     android:id="@+id/nine"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/nine"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
@@ -191,7 +178,6 @@
                     android:id="@+id/five"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/five"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
@@ -199,7 +185,6 @@
                     android:id="@+id/twelve"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/twelve"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
@@ -207,7 +192,6 @@
                     android:id="@+id/eight"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/eight"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"/>
