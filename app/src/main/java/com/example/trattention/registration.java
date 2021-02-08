@@ -5,26 +5,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.content.Intent;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
 
 
 public class registration extends AppCompatActivity {
 
     private Spinner Spingender;
     private Spinner Spinage;
-
-    EditText mEmail,mPassword;
-    Button mLoginBtn;
-    TextView mSignup,forgotTextLink;
-    FirebaseAuth fAuth;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -33,32 +23,6 @@ public class registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         //設定隱藏標題
         getSupportActionBar().hide();
-
-        //抓使用者輸入的值
-        mEmail = findViewById(R.id.email);
-        mPassword = findViewById(R.id.password);
-        mLoginBtn = findViewById(R.id.login);
-        mSignup = findViewById(R.id.registration);
-        forgotTextLink = findViewById(R.id.ForgetPassword);
-        fAuth = FirebaseAuth.getInstance();
-
-        mSignup.setOnClickListener(view -> {
-            fAuth.createUserWithEmailAndPassword(mEmail.getText().toString(),
-                    mPassword.getText().toString())
-                    .addOnCompleteListener(task -> {
-                        if(task.isSuccessful()){
-                            Toast.makeText(registration.this, "註冊成功", Toast.LENGTH_LONG).show();
-                            mEmail.setText("");
-                            mPassword.setText("");
-                        }
-                        else{
-                            Toast.makeText(registration.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                        }
-                    });
-
-        });
-
-
 
         //設定註冊按鈕切換到登入頁面
         Button btn_to_B = (Button) findViewById(R.id.registration);
@@ -111,4 +75,3 @@ public class registration extends AppCompatActivity {
         }
     };
 }
-
