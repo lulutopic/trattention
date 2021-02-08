@@ -26,16 +26,16 @@ import java.util.Collections;
 
 
 public class SchulteGrid extends AppCompatActivity {
-    private Long startTime;
-    private Chronometer timer;
+    private Long startTime; //初始時間
+    private Chronometer timer; //已經過時間
     private Handler handler = new Handler();
 
 
 
-    //圖片的id設定的變數
+    //圖片的id位置
     ImageView one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve,thirteen,fourteen,fifteen,sixteen;
 
-
+    //圖片的檔案引入陣列
     int[] ImageArray = {R.drawable.one,R.drawable.two,R.drawable.three,R.drawable.four,R.drawable.five,R.drawable.six,R.drawable.seven
     ,R.drawable.eight,R.drawable.nine,R.drawable.ten,R.drawable.eleven,R.drawable.twelve,R.drawable.thirteen,R.drawable.fourteen
     ,R.drawable.fifteen,R.drawable.sixteen};
