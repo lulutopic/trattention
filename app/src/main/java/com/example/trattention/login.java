@@ -70,7 +70,7 @@ public class login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(login.this, "成功登入", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),FirstTest.class));
+                            startActivity(new Intent(getApplicationContext(),personal.class));//要再判斷是不是第一次進入該頁面，若為第一次則需進行初始測驗
                         }else {
                             Toast.makeText(login.this, "登入失敗 " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
