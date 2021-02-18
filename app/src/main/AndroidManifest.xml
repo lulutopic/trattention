@@ -13,8 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Trattention">
-        <!-- 登入頁面 -->
-        <activity android:name=".login">
+        <!-- 記憶力遊戲 -->
+        <activity android:name=".MemoryGame">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,6 +29,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--暫停按鈕的彈跳視窗-->
+        <activity android:name=".stop_button">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 登入頁面 -->
+        <activity android:name=".login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <!-- 舒爾特方格 -->
         <activity android:name=".SchulteGrid">
             <intent-filter>
@@ -46,13 +63,6 @@
             </intent-filter>
         </activity> <!-- 首頁 -->
         <activity android:name=".home">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity> <!-- 記憶力遊戲 -->
-        <activity android:name=".MemoryGame">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

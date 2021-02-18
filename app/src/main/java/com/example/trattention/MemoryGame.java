@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import android.os.SystemClock;
+import android.view.LayoutInflater;
+import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -46,6 +48,16 @@ public class MemoryGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory_images);
+
+        //暫停彈跳視窗的部分
+        AlertDialog.Builder builder = new AlertDialog.Builder(MemoryGame.this);
+
+        LayoutInflater inflater = MemoryGame.this.getLayoutInflater();
+        builder.setView(inflater.inflate(R.layout.activity_stop_button, null));
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
 
         //設定隱藏標題
         getSupportActionBar().hide();
