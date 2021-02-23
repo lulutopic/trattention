@@ -54,7 +54,7 @@
             android:text="距離上次專注力測驗已滿一個月\n你也已經完成20次每日任務\n可以到專注力分析紀錄的開始測驗\n進行新的專注力測驗囉"
             android:textSize="30dp"
             android:gravity="center_vertical"
-            android:background="@color/white"
+            android:background="@drawable/whitebackground"
             android:elevation="5dp"
             android:paddingLeft="110dp"
             android:letterSpacing="0.4"
