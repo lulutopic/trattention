@@ -460,14 +460,14 @@ public class MemoryGame2 extends AppCompatActivity {
 
 
     //固定要執行的方法
-    protected Runnable updateTimer = new Runnable() {
+    private Runnable updateTimer = new Runnable() {
         public void run() {
             final TextView time = (Chronometer) findViewById(R.id.timer);
             Long spentTime = System.currentTimeMillis() - startTime;
             //計算目前已過小時數
             Long hour = (spentTime/1000)/3600;
             //計算目前已過分鐘數
-            Long minius = (spentTime/1000)/60;
+            Long minius = ((spentTime/1000)/60) % 60;
             //計算目前已過秒數
             Long seconds = (spentTime/1000) % 60;
             String formattedTime = String.format("%02d:%02d:%02d",hour, minius, seconds);
@@ -475,6 +475,7 @@ public class MemoryGame2 extends AppCompatActivity {
             handler.postDelayed(this, 1000);
         }
     };
+
 
 
 

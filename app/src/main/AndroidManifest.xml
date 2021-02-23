@@ -17,6 +17,8 @@
         <activity
             android:name=".login"
             android:screenOrientation="landscape">
+        <!-- 記憶力遊戲 -->
+        <activity android:name=".MemoryGame">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,6 +41,16 @@
             android:name=".personal"
             android:label="@string/title_activity_personal_setting"
             android:screenOrientation="landscape">
+        <!--暫停按鈕的彈跳視窗-->
+        <activity android:name=".stop_button">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 登入頁面 -->
+        <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -74,7 +86,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 記憶力遊戲 -->
+        </activity> 
+        <!-- 記憶力遊戲 -->
         <activity
             android:name=".MemoryGame"
             android:screenOrientation="landscape">
@@ -88,6 +101,9 @@
         <activity
             android:name=".instruction"
             android:screenOrientation="landscape">
+        </activity> 
+        <!-- 指南選擇專區 -->
+        <activity android:name=".instruction">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
