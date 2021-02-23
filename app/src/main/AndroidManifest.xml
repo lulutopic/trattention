@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trattention">
         <!-- 登入頁面 -->
-        <activity android:name=".login">
+        <activity
+            android:name=".login"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,15 +24,32 @@
             </intent-filter>
         </activity>
         <!-- 圖形配對 -->
-        <activity android:name=".imagePair">
+        <activity
+            android:name=".imagePair"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- 個人化設置 -->
+        <activity
+            android:name=".personal"
+            android:label="@string/title_activity_personal_setting"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <!-- 舒爾特方格 -->
-        <activity android:name=".SchulteGrid">
+        <activity
+            android:name=".SchulteGrid"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,63 +57,86 @@
             </intent-filter>
         </activity>
         <!-- 歡迎 -->
-        <activity android:name=".hello">
+        <activity
+            android:name=".hello"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- 首頁 -->
-        <activity android:name=".home">
+        <activity
+            android:name=".home"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- 記憶力遊戲 -->
-        <activity android:name=".MemoryGame">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity> <!-- 指南選擇專區 -->
-        <activity android:name=".instruction">
+        <activity
+            android:name=".MemoryGame"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SchulteGrid2">
+        <!-- 指南選擇專區 -->
+        <activity
+            android:name=".instruction"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 舒爾特方格1 -->
-        <activity android:name=".SchulteGrid1">
+        </activity>
+        <activity
+            android:name=".SchulteGrid2"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 記憶力遊戲2 -->
-        <activity android:name=".MemoryGame2">
+        </activity>
+        <!-- 舒爾特方格1 -->
+        <activity
+            android:name=".SchulteGrid1"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 記憶力遊戲1 -->
-        <activity android:name=".MemoryGame1">
+        </activity>
+        <!-- 記憶力遊戲2 -->
+        <activity
+            android:name=".MemoryGame2"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 後測 -->
-        <activity android:name=".lastTest">
+        </activity>
+        <!-- 記憶力遊戲1 -->
+        <activity
+            android:name=".MemoryGame1"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 後測 -->
+        <activity
+            android:name=".lastTest"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -102,14 +144,19 @@
             </intent-filter>
         </activity> <!-- 解決Unable to find explicit activity class 的問題 -->
         <!-- 註冊頁面 -->
-        <activity android:name=".registration">
+        <activity
+            android:name=".registration"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 測驗說明 -->
-        <activity android:name=".TestDirection">
+        </activity>
+        <!-- 測驗說明 -->
+        <activity
+            android:name=".TestDirection"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -143,16 +190,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 個人化設置 -->
-        <activity
-            android:name=".personal"
-            android:label="@string/title_activity_personal_setting">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
