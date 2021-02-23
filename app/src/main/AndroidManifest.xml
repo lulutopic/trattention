@@ -17,8 +17,16 @@
         <activity
             android:name=".login"
             android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!-- 記憶力遊戲 -->
-        <activity android:name=".MemoryGame">
+        <activity
+            android:name=".MemoryGame"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,6 +49,7 @@
             android:name=".personal"
             android:label="@string/title_activity_personal_setting"
             android:screenOrientation="landscape">
+        </activity>
         <!--暫停按鈕的彈跳視窗-->
         <activity android:name=".stop_button">
             <intent-filter>
@@ -49,14 +58,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- 登入頁面 -->
-        <activity android:name=".login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <!-- 舒爾特方格 -->
         <activity
@@ -77,19 +79,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 首頁 -->
+        </activity>
+        <!-- 首頁 -->
         <activity
             android:name=".home"
-            android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity> 
-        <!-- 記憶力遊戲 -->
-        <activity
-            android:name=".MemoryGame"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -101,15 +94,13 @@
         <activity
             android:name=".instruction"
             android:screenOrientation="landscape">
-        </activity> 
-        <!-- 指南選擇專區 -->
-        <activity android:name=".instruction">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".SchulteGrid2"
             android:screenOrientation="landscape">
@@ -178,7 +169,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 初始測驗 -->
+        </activity>
+        <!-- 初始測驗 -->
         <activity android:name=".FirstTest">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
