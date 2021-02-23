@@ -185,22 +185,31 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 遊戲結果 -->
-        <activity android:name=".gameresult">
+        </activity> 
+        <!-- 遊戲結果 -->
+        <activity 
+            android:name=".gameresult"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 遊戲選擇頁面 -->
-        <activity android:name=".gameselect">
+        </activity> 
+        <!-- 遊戲選擇頁面 -->
+        <activity 
+            android:name=".gameselect"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 前導片 -->
-        <activity android:name=".video">
+        </activity> 
+        <!-- 前導片 -->
+        <activity 
+            android:name=".video"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
