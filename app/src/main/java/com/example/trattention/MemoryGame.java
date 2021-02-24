@@ -60,6 +60,7 @@ public class MemoryGame extends AppCompatActivity {
             }
         });
         //暫停彈跳視窗的部分
+
        AlertDialog.Builder builder = new AlertDialog.Builder(MemoryGame.this);
         LayoutInflater inflater = MemoryGame.this.getLayoutInflater();
         builder.setView(inflater.inflate(R.layout.activity_stop_button, null));

@@ -7,98 +7,72 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
-public class analyst<StepEntity> extends AppCompatActivity  {
+import android.graphics.Color;
+import android.os.Bundle;
 
-    private ListView listview;
-    private List<StepEntity> stepEntityList = new ArrayList<>();
-    private StepDataDao stepDataDao;
-    private LineChartView lineChart;
-    private List<StepEntity> list;
 
-    String[] date ;
-    float [] score;
-    private List<PointValue> mPointValues = new ArrayList<PointValue>();
-    private List<AxisValue> mAxisXValues = new ArrayList<AxisValue>();
+import java.util.ArrayList;
+import java.util.List;
+
+import lecho.lib.hellocharts.model.Axis;
+import lecho.lib.hellocharts.model.AxisValue;
+import lecho.lib.hellocharts.model.Line;
+import lecho.lib.hellocharts.model.LineChartData;
+import lecho.lib.hellocharts.model.PointValue;
+import lecho.lib.hellocharts.model.Viewport;
+import lecho.lib.hellocharts.view.LineChartView;
+
+public class analyst extends AppCompatActivity {
+
+    LineChartView lineChartView;
+    String[] axisData = {"1", "2", "3", "4", "5", "6", "7", "8", "9",
+            "10", "11", "12"};
+    int[] yAxisData = {50, 20, 15, 30, 20, 60, 15, 40, 45, 10, 90, 18};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
-        stepDataDao = new StepDataDao(this);
-        initView();
-        list = stepDataDao.getAllDatas(  );
-        date=new String[list.size()];
-        score=new float[list.size()];
+        setContentView(R.layout.activity_analyst);
+        //設定隱藏標題
+        getSupportActionBar().hide();
+        lineChartView = findViewById(R.id.chart);
 
-        for (int i=0;i<list.size();i++){
+        List yAxisValues = new ArrayList();
+        List axisValues = new ArrayList();
 
-            date[i]=list.get(i).getCurDate();
-            score[i]=Float.parseFloat(list.get(i).getSteps());
+
+        Line line = new Line(yAxisValues).setColor(Color.parseColor("#FED900"));
+
+        for (int i = 0; i < axisData.length; i++) {
+            axisValues.add(i, new AxisValue(i).setLabel(axisData[i]));
         }
 
-        getAxisXLables();
-        getAxisPoints();
-        initLineChart();
-    }
+        for (int i = 0; i < yAxisData.length; i++) {
+            yAxisValues.add(new PointValue(i, yAxisData[i]));
+        }
 
-    private void initLineChart(){
-        Line line = new Line(mPointValues).setColor(Color.parseColor("#FFCD41"));
-        List<Line> lines = new ArrayList<Line>();
-        line.setShape(ValueShape.CIRCLE);    //折線圖上每個數據點的形狀，這裏是圓形
-        line.setCubic(false);
-        line.setFilled(false);
-        line.setHasLabels(true);
-        line.setHasLines(true);
-        line.setHasPoints(true);
+        List lines = new ArrayList();
         lines.add(line);
+
         LineChartData data = new LineChartData();
         data.setLines(lines);
 
-        //座標軸
-        Axis axisX = new Axis();
-        axisX.setHasTiltedLabels(true);
-        axisX.setTextColor(Color.parseColor("#D6D6D9"));//設置字體顏色
+        Axis axis = new Axis();
+        axis.setValues(axisValues);
+        axis.setTextSize(16);
+        axis.setTextColor(Color.parseColor("#FED900"));
+        data.setAxisXBottom(axis);
 
-        axisX.setTextSize(8);//設置字體大小
-        axisX.setMaxLabelChars(8);//最多幾個X軸座標
-        axisX.setValues(mAxisXValues);
-        data.setAxisXBottom(axisX);
-        axisX.setHasLines(true);
+        Axis yAxis = new Axis();
+        yAxis.setName("(分)");
+        yAxis.setTextColor(Color.parseColor("#FED900"));
+        yAxis.setTextSize(16);
+        data.setAxisYLeft(yAxis);
 
-
-        Axis axisY = new Axis();
-        axisY.setName("");
-        axisY.setTextSize(8);
-        data.setAxisYLeft(axisY);
-        //設置行爲屬性，縮放、滑動、平移
-        lineChart.setInteractive(true);
-        lineChart.setZoomType(ZoomType.HORIZONTAL);
-        lineChart.setMaxZoom((float) 3);
-        lineChart.setLineChartData(data);
-        lineChart.setVisibility(View.VISIBLE);
-        //設置X軸數據的顯示個數（x軸0-7個數據）
-        Viewport v = new Viewport(lineChart.getMaximumViewport());
-        v.left = 0;
-        v.right= 7;
-        lineChart.setCurrentViewport(v);
+        lineChartView.setLineChartData(data);
+        Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
+        viewport.top = 110;
+        lineChartView.setMaximumViewport(viewport);
+        lineChartView.setCurrentViewport(viewport);
     }
-
-    private void initView() {
-
-        listview=(ListView) findViewById(R.id.listview);
-        lineChart = (LineChartView)findViewById(R.id.line_chart);
-    }
-
-
-    private void getAxisXLables(){
-        for (int i = 0; i < date.length; i++) {
-            mAxisXValues.add(new AxisValue(i).setLabel(date[i]));
-        }
-    }
-
-    private void getAxisPoints(){
-        for (int i = 0; i < score.length; i++) {
-            mPointValues.add(new PointValue(i, score[i]));
-        }
-    }
-
 }
