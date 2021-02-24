@@ -60,16 +60,21 @@
             android:layout_width="350dp"
             android:layout_height="250dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/gamereource_rec">
+            android:background="@drawable/gamereource_rec"
+            android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="上次訓練秒數"
                 android:textColor="#30449F"
                 android:textSize="30dp"
                 android:typeface="monospace"
                 android:layout_marginTop="30dp"/>
+            <TextClock
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="350dp"

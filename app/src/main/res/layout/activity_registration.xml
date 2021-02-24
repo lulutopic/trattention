@@ -124,7 +124,7 @@
             android:textColor="#676767"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="570dp"
-            android:background="@drawable/button_shape_normal"/>
+            android:background="@drawable/personal_style"/>
 
     </LinearLayout>
 

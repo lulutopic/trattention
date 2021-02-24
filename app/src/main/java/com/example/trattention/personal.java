@@ -22,33 +22,35 @@ public class personal extends AppCompatActivity {
         setContentView(R.layout.activity_personal);
         //設定隱藏標題
         getSupportActionBar().hide();
-        //頁面跳轉  點選確定->回到主頁面
-        Button button1 = findViewById(R.id.sure);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent();
-                intent.setClass(personal.this, home.class);
-                startActivity(intent);
-            }
-        });
 
-        //switch開關
-        aSwitch=(Switch)findViewById(R.id.switch1);
-        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-               if(isChecked == true){
-                   Toast.makeText(getBaseContext(),"On",Toast.LENGTH_SHORT).show();
-               }else{
-                   Toast.makeText(getBaseContext(),"OFF",Toast.LENGTH_SHORT).show();
-               }
-
-            }
-        });
 
 
     }
 
 
 }
+
+    /*//頁面跳轉  點選確定->回到主頁面
+    Button button1 = findViewById(R.id.sure);
+        button1.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View view) {
+        Intent intent=new Intent();
+        intent.setClass(personal.this, home.class);
+        startActivity(intent);
+        }
+        });
+
+        //switch開關
+        aSwitch=(Switch)findViewById(R.id.switch1);
+        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+@Override
+public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if(isChecked == true){
+        Toast.makeText(getBaseContext(),"On",Toast.LENGTH_SHORT).show();
+        }else{
+        Toast.makeText(getBaseContext(),"OFF",Toast.LENGTH_SHORT).show();
+        }
+
+        }
+        });*/

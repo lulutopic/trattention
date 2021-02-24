@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/personal"
+            app:srcCompat="@drawable/personal_style"
             android:layout_marginRight="60dp"
             android:layout_marginBottom="70dp"/>
     </LinearLayout>
