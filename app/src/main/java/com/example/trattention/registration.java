@@ -109,9 +109,11 @@ public class registration extends AppCompatActivity {
 
             if(TextUtils.isEmpty(password)){
                 mPassword.setError("請輸入密碼");
-                if(TextUtils.isEmpty(passwordC)){
-                    mConfirm.setError("請輸入確認密碼");
-                }
+                return;
+            }
+
+            if(TextUtils.isEmpty(passwordC)){
+                mConfirm.setError("請輸入確認密碼");
                 return;
             }
 
