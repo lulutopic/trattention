@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import android.os.SystemClock;
+import android.view.LayoutInflater;
+import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -46,6 +48,52 @@ public class MemoryGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory_images);
+
+        //頁面跳轉  點選 pause
+        ImageView button4 = findViewById(R.id.imagepause);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent();
+                intent.setClass(MemoryGame.this, stop_button.class);
+                startActivity(intent);
+            }
+        });
+        //暫停彈跳視窗的部分
+       /* AlertDialog.Builder builder = new AlertDialog.Builder(MemoryGame.this);
+        LayoutInflater inflater = MemoryGame.this.getLayoutInflater();
+        builder.setView(inflater.inflate(R.layout.activity_stop_button, null));
+
+        AlertDialog dialog = builder.create();
+        dialog.show();*/
+        //頁面跳轉
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MemoryGame.this);
+        LayoutInflater inflater = MemoryGame.this.getLayoutInflater();
+        alertDialogBuilder.setView(inflater.inflate(R.layout.activity_stop_button, null));
+        alertDialogBuilder
+
+                .setMessage("恭喜!遊戲結束~")
+                .setCancelable(false)
+                .setNeutralButton("查看結果",new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface,int i){
+                        Intent intent = new Intent();
+                        intent.setClass(MemoryGame.this,gameresult.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .setNeutralButton("離開",new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialogInterface,int i){
+                        Intent intent = new Intent();
+                        intent.setClass(MemoryGame.this,gameselect.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
 
         //設定隱藏標題
         getSupportActionBar().hide();
@@ -452,14 +500,14 @@ public class MemoryGame extends AppCompatActivity {
 
 
     //固定要執行的方法
-    protected Runnable updateTimer = new Runnable() {
+    private Runnable updateTimer = new Runnable() {
         public void run() {
             final TextView time = (Chronometer) findViewById(R.id.timer);
             Long spentTime = System.currentTimeMillis() - startTime;
             //計算目前已過小時數
             Long hour = (spentTime/1000)/3600;
             //計算目前已過分鐘數
-            Long minius = (spentTime/1000)/60;
+            Long minius = ((spentTime/1000)/60) % 60;
             //計算目前已過秒數
             Long seconds = (spentTime/1000) % 60;
             String formattedTime = String.format("%02d:%02d:%02d",hour, minius, seconds);
