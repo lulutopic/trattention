@@ -128,7 +128,7 @@ public class registration extends AppCompatActivity {
 
             else{
                 //判斷確認密碼以及密碼是否相同
-                if(mPassword.equals(mConfirm)){
+                if(password.equals(passwordC)){
                     fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -166,7 +166,7 @@ public class registration extends AppCompatActivity {
                                         Log.d(TAG, "onFailure: " + e.toString());
                                     }
                                 });
-//                            startActivity(new Intent(getApplicationContext(),login.class));
+                                startActivity(new Intent(getApplicationContext(),login.class));
 
                             }
                             else {
@@ -180,6 +180,7 @@ public class registration extends AppCompatActivity {
                 else{
                     Toast.makeText(this, "帳號密碼不一致", Toast.LENGTH_LONG).show();
                 }
+
             }
 
 
@@ -204,4 +205,5 @@ public class registration extends AppCompatActivity {
         }
     };
 }
+
 

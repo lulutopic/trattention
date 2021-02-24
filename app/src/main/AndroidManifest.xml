@@ -14,6 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trattention">
 
+        <!-- 註冊頁面 -->
+        <activity
+            android:name=".registration"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <!-- 記憶力遊戲 -->
         <activity
             android:name=".MemoryGame"
@@ -162,15 +172,7 @@
             </intent-filter>
         </activity>
         <!-- 解決Unable to find explicit activity class 的問題 -->
-        <!-- 註冊頁面 -->
-        <activity
-            android:name=".registration"
-            android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
         <!-- 測驗說明 -->
         <activity
             android:name=".TestDirection"
