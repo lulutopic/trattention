@@ -68,20 +68,21 @@
         android:orientation="horizontal"
         android:paddingLeft="155dp"
         android:paddingRight="90dp">
+
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
+            android:layout_width="935dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/record"
             android:layout_marginLeft="40dp"
-            android:layout_marginBottom="70dp"/>
+            android:layout_marginBottom="70dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/record" />
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/personal_style"
+            app:srcCompat="@drawable/personal"
             android:layout_marginRight="60dp"
             android:layout_marginBottom="70dp"/>
     </LinearLayout>

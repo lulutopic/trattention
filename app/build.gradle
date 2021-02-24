@@ -43,7 +43,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     compileOnly 'com.google.android.wearable:wearable:2.6.0'
-
+    compile 'com.github.lecho:hellocharts-library:1.5.8@aar'
     // Import the Firebase BoM
     implementation platform('com.google.firebase:firebase-bom:26.1.0')
 
