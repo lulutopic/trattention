@@ -90,8 +90,8 @@ public class registration extends AppCompatActivity {
         Spinage.setOnItemSelectedListener(spnRegionOnItemSelected);
 
         if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),login.class));
-            finish();
+//            startActivity(new Intent(getApplicationContext(),login.class));
+//            finish();
         }
 
 
@@ -109,11 +109,9 @@ public class registration extends AppCompatActivity {
 
             if(TextUtils.isEmpty(password)){
                 mPassword.setError("請輸入密碼");
-                return;
-            }
-
-            if(TextUtils.isEmpty(passwordC)){
-                mPassword.setError("請輸入確認密碼");
+                if(TextUtils.isEmpty(passwordC)){
+                    mConfirm.setError("請輸入確認密碼");
+                }
                 return;
             }
 
@@ -126,59 +124,63 @@ public class registration extends AppCompatActivity {
                 mName.setError("請輸入名字");
             }
 
-            //判斷確認密碼以及密碼是否相同
-            if(mPassword.equals(mConfirm)){
-                fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-
-                            // send verification link
-
-                            FirebaseUser fuser = fAuth.getCurrentUser();
-                            fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Toast.makeText(registration.this, "Verification Email Has been Sent.", Toast.LENGTH_SHORT).show();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG, "onFailure: Email not sent " + e.getMessage());
-                                }
-                            });
-
-                            Toast.makeText(registration.this, "User Created.", Toast.LENGTH_SHORT).show();
-                            userID = fAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = fStore.collection("users").document(userID);
-                            Map<String,Object> user = new HashMap<>();
-                            user.put("fName",Name);
-                            user.put("email",email);
-                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Log.d(TAG, "onSuccess: user Profile is created for "+ userID);
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG, "onFailure: " + e.toString());
-                                }
-                            });
-                            startActivity(new Intent(getApplicationContext(),login.class));
-
-                        }
-                        else {
-                            Toast.makeText(registration.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.GONE);
-                        }
-                    }
-                });
-            }
-            //若不相同則顯示密碼不一致
             else{
-                Toast.makeText(this, "帳號密碼不一致", Toast.LENGTH_LONG).show();
+                //判斷確認密碼以及密碼是否相同
+                if(mPassword.equals(mConfirm)){
+                    fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+
+                                // send verification link
+
+                                FirebaseUser fuser = fAuth.getCurrentUser();
+                                fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Toast.makeText(registration.this, "Verification Email Has been Sent.", Toast.LENGTH_SHORT).show();
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.d(TAG, "onFailure: Email not sent " + e.getMessage());
+                                    }
+                                });
+
+                                Toast.makeText(registration.this, "User Created.", Toast.LENGTH_SHORT).show();
+                                userID = fAuth.getCurrentUser().getUid();
+                                DocumentReference documentReference = fStore.collection("users").document(userID);
+                                Map<String,Object> user = new HashMap<>();
+                                user.put("fName",Name);
+                                user.put("email",email);
+                                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d(TAG, "onSuccess: user Profile is created for "+ userID);
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.d(TAG, "onFailure: " + e.toString());
+                                    }
+                                });
+//                            startActivity(new Intent(getApplicationContext(),login.class));
+
+                            }
+                            else {
+                                Toast.makeText(registration.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                progressBar.setVisibility(View.GONE);
+                            }
+                        }
+                    });
+                }
+                //若不相同則顯示密碼不一致
+                else{
+                    Toast.makeText(this, "帳號密碼不一致", Toast.LENGTH_LONG).show();
+                }
             }
+
+
 
 
         });
