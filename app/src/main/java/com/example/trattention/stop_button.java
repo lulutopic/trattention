@@ -3,6 +3,7 @@ package com.example.trattention;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,13 +18,14 @@ public class stop_button extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stop_button);
 
-        //頁面跳轉  點選 pause
-        ImageView button4 = findViewById(R.id.imageexit);
-        button4.setOnClickListener(new View.OnClickListener() {
+
+        ImageView button = findViewById(R.id.imageexit);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d("TRY INTENT","TEST");
                 Intent intent=new Intent();
-                intent.setClass(stop_button.this, stop_button.class);
+                intent.setClass(stop_button.this, home.class);
                 startActivity(intent);
             }
         });

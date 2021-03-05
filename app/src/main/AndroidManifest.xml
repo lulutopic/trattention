@@ -13,20 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Trattention">
-
-        <!-- 記憶力遊戲 -->
+        <!-- 記憶力遊戲2 -->
         <activity
-            android:name=".MemoryGame"
+            android:name=".MemoryGame2"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <!-- 初始測驗 -->
-        <activity android:name=".FirstTest">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -39,6 +32,36 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- 個人化設置 -->
+        <activity
+            android:name=".personal"
+            android:label="@string/title_activity_personal_setting"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 記憶力遊戲 -->
+        <activity
+            android:name=".MemoryGame"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <!-- 初始測驗 -->
+        <activity android:name=".FirstTest">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <!-- 首頁 -->
         <activity
             android:name=".home"
@@ -68,12 +91,7 @@
             </intent-filter>
         </activity>
 
-        <!-- 個人化設置 -->
-        <activity
-            android:name=".personal"
-            android:label="@string/title_activity_personal_setting"
-            android:screenOrientation="landscape">
-        </activity>
+
 
         <!--暫停按鈕的彈跳視窗-->
         <activity android:name=".stop_button">
@@ -132,16 +150,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- 記憶力遊戲2 -->
-        <activity
-            android:name=".MemoryGame2"
-            android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <!-- 記憶力遊戲1 -->
         <activity
             android:name=".MemoryGame1"
@@ -162,15 +171,7 @@
             </intent-filter>
         </activity>
         <!-- 解決Unable to find explicit activity class 的問題 -->
-        <!-- 註冊頁面 -->
-        <activity
-            android:name=".registration"
-            android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
         <!-- 測驗說明 -->
         <activity
             android:name=".TestDirection"

@@ -40,6 +40,7 @@ public class registration extends AppCompatActivity {
 
     EditText mEmail, mPassword, mConfirm, mName;
     Button mLoginBtn, mSignUpBtn;
+    Spinner mGender, mAge;
     TextView forgotTextLink;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -63,6 +64,8 @@ public class registration extends AppCompatActivity {
         //mLoginBtn = findViewById(R.id.login);
         mSignUpBtn = findViewById(R.id.registration);
         forgotTextLink = findViewById(R.id.ForgetPassword);
+        mGender = findViewById(R.id.gender);
+        mAge = findViewById(R.id.age);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -101,6 +104,9 @@ public class registration extends AppCompatActivity {
             String password = mPassword.getText().toString().trim();
             String passwordC = mConfirm.getText().toString().trim();
             final String Name = mName.getText().toString();
+            String age = mAge.getSelectedItem().toString();
+            String gender = mGender.getSelectedItem().toString();
+
 
             if(TextUtils.isEmpty(email)){
                 mEmail.setError("請輸入 email");
@@ -128,7 +134,7 @@ public class registration extends AppCompatActivity {
 
             else{
                 //判斷確認密碼以及密碼是否相同
-                if(mPassword.equals(mConfirm)){
+                if(password.equals(passwordC)){
                     fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -153,8 +159,10 @@ public class registration extends AppCompatActivity {
                                 userID = fAuth.getCurrentUser().getUid();
                                 DocumentReference documentReference = fStore.collection("users").document(userID);
                                 Map<String,Object> user = new HashMap<>();
-                                user.put("fName",Name);
+                                user.put("name",Name);//前面表資料庫中欄位名稱，後面為資料庫要產生的值
                                 user.put("email",email);
+                                user.put("gender", gender);
+                                user.put("age", age);
                                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
@@ -166,7 +174,7 @@ public class registration extends AppCompatActivity {
                                         Log.d(TAG, "onFailure: " + e.toString());
                                     }
                                 });
-//                            startActivity(new Intent(getApplicationContext(),login.class));
+                                startActivity(new Intent(getApplicationContext(),login.class));
 
                             }
                             else {
@@ -180,6 +188,7 @@ public class registration extends AppCompatActivity {
                 else{
                     Toast.makeText(this, "帳號密碼不一致", Toast.LENGTH_LONG).show();
                 }
+
             }
 
 
@@ -204,4 +213,5 @@ public class registration extends AppCompatActivity {
         }
     };
 }
+
 

@@ -82,23 +82,91 @@
             android:orientation="vertical">
 
             <TextView
-
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="132dp"
                 android:gravity="center"
                 android:text="我想要"
                 android:textColor="@color/blue"
                 android:textSize="40dp">
 
             </TextView>
-
             <ImageView
                 android:id="@+id/iv_100"
-                android:layout_gravity="center"
                 android:layout_width="100dp"
-                android:scaleType="center"
                 android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:scaleType="center"
                 android:src="@drawable/memoryback" />
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:scaleType="center"
+                    android:src="@drawable/up_arrow"
+
+
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/left_arrow"/>
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ok"
+                    android:layout_marginLeft="52dp"
+                    />
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:scaleType="center"
+                    android:src="@drawable/right_arrow"
+                    android:layout_marginLeft="52dp"
+
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:scaleType="center"
+                    android:src="@drawable/down_arrow"
+
+
+                    />
+
+
+            </LinearLayout>
 
         </LinearLayout>
         <LinearLayout
