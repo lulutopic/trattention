@@ -89,13 +89,16 @@
                 android:layout_marginTop="20dp"
                 android:paddingLeft="30dp"
                 android:paddingBottom="10dp">
-                <ImageView
+                <TextView
                     android:id="@+id/question"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="110dp">
-                </ImageView>
+                    android:gravity="center"
+                    android:text="color"
+                    android:textSize="80dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginLeft="130dp">
+                </TextView>
 
             </LinearLayout>
 
@@ -104,51 +107,45 @@
                 android:layout_height="0dp"
                 android:layout_weight="2"
                 android:orientation="horizontal">
-                <LinearLayout
+                <TextView
                     android:id="@+id/optionA"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="200dp"
+                    android:layout_height="170dp"
                     android:layout_weight="1"
-                    android:background="@drawable/option_a"
+                    android:background="@drawable/red"
+                    android:text="黑"
+                    android:textSize="70dp"
+                    android:onClick="btnClick"
+                    android:clickable="true"
+                    android:gravity="center"
                     android:layout_margin="20dp">
-                    <ImageView
-                        android:id="@+id/img01"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginLeft="60dp"
-                        android:layout_marginTop="45dp">
-                    </ImageView>
-                </LinearLayout>
-                <LinearLayout
+                </TextView>
+                <TextView
                     android:id="@+id/optionB"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="200dp"
+                    android:layout_height="170dp"
                     android:layout_weight="1"
-                    android:background="@drawable/option_b"
+                    android:background="@drawable/blue"
+                    android:text="黑"
+                    android:textSize="70dp"
+                    android:onClick="btnClick"
+                    android:clickable="true"
+                    android:gravity="center"
                     android:layout_margin="20dp">
-                    <ImageView
-                        android:id="@+id/img02"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginLeft="60dp"
-                        android:layout_marginTop="45dp">
-                    </ImageView>
-                </LinearLayout>
-                <LinearLayout
+                </TextView>
+                <TextView
                     android:id="@+id/optionC"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="200dp"
+                    android:layout_height="170dp"
                     android:layout_weight="1"
-                    android:background="@drawable/option_c"
+                    android:background="@drawable/green"
+                    android:text="黑"
+                    android:textSize="70dp"
+                    android:onClick="btnClick"
+                    android:clickable="true"
+                    android:gravity="center"
                     android:layout_margin="20dp">
-                    <ImageView
-                        android:id="@+id/img03"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginLeft="60dp"
-                        android:layout_marginTop="45dp">
-                    </ImageView>
-                </LinearLayout>
+                </TextView>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
