@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MemoryGame"
+    tools:context=".imagePair"
     android:background="@color/background">
 
     <LinearLayout
@@ -112,40 +112,37 @@
                     android:layout_width="200dp"
                     android:layout_height="170dp"
                     android:layout_weight="1"
-                    android:background="@drawable/red"
+                    android:background="@drawable/optiona"
                     android:text="黑"
                     android:textSize="70dp"
-                    android:onClick="btnClick"
                     android:clickable="true"
+
                     android:gravity="center"
-                    android:layout_margin="20dp">
-                </TextView>
+                    android:layout_margin="20dp"/>
                 <TextView
                     android:id="@+id/optionB"
                     android:layout_width="200dp"
                     android:layout_height="170dp"
                     android:layout_weight="1"
-                    android:background="@drawable/blue"
+                    android:background="@drawable/optionb"
                     android:text="黑"
                     android:textSize="70dp"
-                    android:onClick="btnClick"
+
                     android:clickable="true"
                     android:gravity="center"
-                    android:layout_margin="20dp">
-                </TextView>
+                    android:layout_margin="20dp"/>
                 <TextView
                     android:id="@+id/optionC"
                     android:layout_width="200dp"
                     android:layout_height="170dp"
                     android:layout_weight="1"
-                    android:background="@drawable/green"
+                    android:background="@drawable/optionc"
                     android:text="黑"
                     android:textSize="70dp"
-                    android:onClick="btnClick"
+
                     android:clickable="true"
                     android:gravity="center"
-                    android:layout_margin="20dp">
-                </TextView>
+                    android:layout_margin="20dp"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

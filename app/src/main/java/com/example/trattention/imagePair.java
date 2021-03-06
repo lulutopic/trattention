@@ -54,8 +54,9 @@ public class imagePair extends AppCompatActivity {
         handler.postDelayed(updateTimer, 10);
         random = new Random();
         populateBothArraylists();
-        setupViewsAndListeners();
         getRandomColor();
+        setupViewsAndListeners();
+
     }
 
     private void setupViewsAndListeners(){
@@ -64,10 +65,10 @@ public class imagePair extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 //Convert background to drawable.
-                ColorDrawable col = (ColorDrawable) v.getBackground();
+                //ColorDrawable col = (ColorDrawable) v.getBackground();
 
                 //Get color of drawable.
-                int color = col.getColor();
+                int color = redImageButton.getCurrentTextColor();
 
                 if(color == colorTextView.getCurrentTextColor()){
                     count++;
@@ -80,10 +81,10 @@ public class imagePair extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 //Convert background to drawable.
-                ColorDrawable col = (ColorDrawable) v.getBackground();
+                //ColorDrawable col = (ColorDrawable) v.getC();
 
                 //Get color of drawable.
-                int color = col.getColor();
+                int color = greenImageButton.getCurrentTextColor();
 
                 if(color == colorTextView.getCurrentTextColor()){
                     count++;
@@ -96,15 +97,15 @@ public class imagePair extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 //Convert background to drawable.
-                ColorDrawable col = (ColorDrawable) v.getBackground();
+                //ColorDrawable col = (ColorDrawable) v.getBackground();
 
                 //Get color of drawable.
-                int color = col.getColor();
+                int color = blueImageButton.getCurrentTextColor();
 
                 if(color == colorTextView.getCurrentTextColor()){
                     count++;
-                    getRandomColor();
                     checkEnd();
+                    getRandomColor();
                 }
             }
         });
@@ -131,9 +132,9 @@ public class imagePair extends AppCompatActivity {
         greenImageButton = (TextView) findViewById(R.id.optionC);
 
         //add color names to the ArrayList
-        colorNames.add("Red");
-        colorNames.add("blue");
-        colorNames.add("green");
+        colorNames.add("紅色");
+        colorNames.add("藍色");
+        colorNames.add("綠色");
 
         //Add color values to the arraylist
         colorValues.add(ContextCompat.getColor(this,R.color.colorRed));
@@ -153,20 +154,25 @@ public class imagePair extends AppCompatActivity {
         Collections.shuffle(button);
 
         //using a random number to get a random color from the arrayList
-        int randomColor = random.nextInt(colorNames.size());
-        String colorChosen = colorNames.get(randomColor);
+
+        String colorChosen1 = colorNames.get(0);
+        String colorChosen2 = colorNames.get(1);
+        String colorChosen3 = colorNames.get(2);
+
 
         //set this random color to be the text that is shown at the bottom
-        colorTextView.setText(colorChosen);
+        colorTextView.setText(colorChosen1);
+        button.get(0).setText(colorChosen1);
+        button.get(1).setText(colorChosen2);
+        button.get(2).setText(colorChosen3);
+
 
         //chose an actual color to be randomly generated for the text
-        int randomColorTextColor1 = random.nextInt(colorValues.size());
-        int randomColorTextColor2 = random.nextInt(colorValues.size());
-        int randomColorTextColor3 = random.nextInt(colorValues.size());
-        colorTextView.setTextColor(colorValues.get(randomColorTextColor1));
-        button.get(0).setBackgroundColor(colorValues.get(randomColorTextColor1));
-        button.get(1).setBackgroundColor(colorValues.get(randomColorTextColor2));
-        button.get(2).setBackgroundColor(colorValues.get(randomColorTextColor3));
+
+        colorTextView.setTextColor(colorValues.get(0));
+        button.get(0).setTextColor(colorValues.get(0));
+        button.get(1).setTextColor(colorValues.get(1));
+        button.get(2).setTextColor(colorValues.get(2));
 
     }
 

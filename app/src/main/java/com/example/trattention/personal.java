@@ -27,7 +27,6 @@ public class personal extends AppCompatActivity {
 
     }
 
-
 }
 
     /*//頁面跳轉  點選確定->回到主頁面
